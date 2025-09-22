@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Complaint Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h1 class="brand"><i class="fa-solid fa-clipboard-list"></i> Complaint Dashboard</h1>
+      <nav>
+        <button class="nav-btn active" data-tab="home"><i class="fa-solid fa-house"></i> Home</button>
+        <button class="nav-btn" data-tab="signup"><i class="fa-solid fa-user-plus"></i> Sign Up</button>
+        <button class="nav-btn" data-tab="login"><i class="fa-solid fa-right-to-bracket"></i> Login</button>
+        <button class="nav-btn" data-tab="register"><i class="fa-solid fa-file-circle-plus"></i> Register Complaint</button>
+        <button class="nav-btn" data-tab="dashboard"><i class="fa-solid fa-table-list"></i> My Complaints</button>
+        <button class="nav-btn" data-tab="status"><i class="fa-solid fa-magnifying-glass"></i> Check Status</button>
+        <button class="nav-btn" data-tab="admin"><i class="fa-solid fa-user-shield"></i> Admin</button>
+        <button class="nav-btn" data-tab="about"><i class="fa-solid fa-info-circle"></i> About</button>
+      </nav>
+      <button id="logout-btn" style="display: none;">Logout</button>
+      <div id="user-info"></div>
+    </aside>
+
+    <main>
+      <section id="home" class="tab active">
+        <div class="card">
+          <h2>Welcome to the Complaint Dashboard</h2>
+          <blockquote>"Your voice matters — report and track issues easily."</blockquote>
+          <ul>
+            <li>Sign up and create your dashboard</li>
+            <li>Register new complaints</li>
+            <li>Monitor all your complaints here</li>
+          </ul>
+          <div class="stats">
+            <div><strong id="total-count">0</strong> Total Complaints</div>
+            <div><strong id="pending-count">0</strong> Pending</div>
+            <div><strong id="resolved-count">0</strong> Resolved</div>
+          </div>
+          <div class="actions">
+            <button id="home-signup-btn">Sign Up</button>
+            <button id="home-login-btn">Login</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="signup" class="tab">
+        <div class="card form-card">
+          <h2>Sign Up</h2>
+          <input id="signup-name" type="text" placeholder="Full Name" />
+          <input id="signup-village" type="text" placeholder="Village" />
+          <input id="signup-age" type="number" placeholder="Age" />
+          <input id="signup-mobile" type="text" placeholder="Mobile Number" />
+          <input id="signup-password" type="password" placeholder="Password" />
+          <button id="signup-btn">Create Account</button>
+          <p id="signup-msg"></p>
+        </div>
+      </section>
+
+      <section id="login" class="tab">
+        <div class="card form-card">
+          <h2>Login</h2>
+          <input id="login-mobile" type="text" placeholder="Mobile Number" />
+          <input id="login-password" type="password" placeholder="Password" />
+          <button id="login-btn">Login</button>
+          <p id="login-msg"></p>
+        </div>
+      </section>
+
+      <section id="register" class="tab">
+        <div class="card form-card">
+          <h2>Register Complaint</h2>
+          <textarea id="complaint-text" placeholder="Describe your complaint"></textarea>
+          <button id="register-btn">Submit Complaint</button>
+          <p id="register-msg"></p>
+        </div>
+      </section>
+
+      <section id="dashboard" class="tab">
+        <div class="card">
+          <h2>Your Complaints</h2>
+          <div id="complaints-list"></div>
+        </div>
+      </section>
+
+      <section id="status" class="tab">
+        <div class="card form-card">
+          <h2>Check Complaint Status</h2>
+          <input id="status-id" type="text" placeholder="Enter Complaint ID" />
+          <button id="status-btn">Check</button>
+          <div class="status-bar">
+            <span id="step1">Submitted</span>
+            <span id="step2">Under Review</span>
+            <span id="step3">Resolved</span>
+          </div>
+          <p id="status-msg"></p>
+        </div>
+      </section>
+
+      <section id="admin" class="tab">
+        <div class="card form-card">
+          <h2>Admin Panel</h2>
+          <div id="admin-complaints"></div>
+          <input id="admin-id" placeholder="Complaint ID" />
+          <input id="admin-response" placeholder="Add Response" />
+          <button id="admin-btn">Submit Response</button>
+          <p id="admin-msg"></p>
+        </div>
+      </section>
+
+      <section id="about" class="tab">
+        <div class="card">
+          <h2>About</h2>
+          <p>This app is designed for streamlined and transparent complaint management.</p>
+        </div>
+      </section>
+       <footer>
+    <p id="footer-text" style="text-align:center; color:#999;">© 2025 Complaint Dashboard. All rights reserved.</p>
+  </footer>
+    </main>
+  </div>
+
+ 
+</body>
+
+</html>
