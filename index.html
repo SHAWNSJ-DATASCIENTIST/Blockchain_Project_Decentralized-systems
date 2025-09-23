@@ -7,8 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script defer src="script.js"></script>
 </head>
 
 <body>
@@ -16,14 +17,15 @@
     <aside class="sidebar">
       <h1 class="brand"><i class="fa-solid fa-clipboard-list"></i> Complaint Dashboard</h1>
       <nav>
-        <button class="nav-btn active" data-tab="home"><i class="fa-solid fa-house"></i> Home</button>
-        <button class="nav-btn" data-tab="signup"><i class="fa-solid fa-user-plus"></i> Sign Up</button>
-        <button class="nav-btn" data-tab="login"><i class="fa-solid fa-right-to-bracket"></i> Login</button>
-        <button class="nav-btn" data-tab="register"><i class="fa-solid fa-file-circle-plus"></i> Register Complaint</button>
-        <button class="nav-btn" data-tab="dashboard"><i class="fa-solid fa-table-list"></i> My Complaints</button>
-        <button class="nav-btn" data-tab="status"><i class="fa-solid fa-magnifying-glass"></i> Check Status</button>
-        <button class="nav-btn" data-tab="admin"><i class="fa-solid fa-user-shield"></i> Admin</button>
         <button class="nav-btn" data-tab="about"><i class="fa-solid fa-info-circle"></i> About</button>
+        <button class="nav-btn" data-tab="admin"><i class="fa-solid fa-user-shield"></i> Admin</button>
+        <button class="nav-btn" data-tab="status"><i class="fa-solid fa-magnifying-glass"></i> Check Status</button>
+        <button class="nav-btn active" data-tab="home"><i class="fa-solid fa-house"></i> Home</button>
+        <button class="nav-btn" data-tab="login"><i class="fa-solid fa-right-to-bracket"></i> Login</button>
+        <button class="nav-btn" data-tab="dashboard"><i class="fa-solid fa-table-list"></i> My Complaints</button>
+        <button class="nav-btn" data-tab="officer"><i class="fa-solid fa-user-tie"></i> Officer</button>
+        <button class="nav-btn" data-tab="register"><i class="fa-solid fa-file-circle-plus"></i> Register Complaint</button>
+        <button class="nav-btn" data-tab="signup"><i class="fa-solid fa-user-plus"></i> Sign Up</button>
       </nav>
       <button id="logout-btn" style="display: none;">Logout</button>
       <div id="user-info"></div>
@@ -48,6 +50,7 @@
             <button id="home-signup-btn">Sign Up</button>
             <button id="home-login-btn">Login</button>
           </div>
+          <img src="a.jpg" alt="Register Complaint" class="home-image"/>
         </div>
       </section>
 
@@ -115,19 +118,37 @@
         </div>
       </section>
 
-      <section id="about" class="tab">
-        <div class="card">
-          <h2>About</h2>
-          <p>This app is designed for streamlined and transparent complaint management.</p>
+      <section id="officer" class="tab">
+        <div class="card form-card">
+          <h2>Officer Login</h2>
+          <input id="officer-id" type="text" placeholder="Officer ID" />
+          <input id="officer-password" type="password" placeholder="Password" />
+          <button id="officer-btn">Login</button>
+          <p id="officer-msg"></p>
         </div>
       </section>
-       <footer>
-    <p id="footer-text" style="text-align:center; color:#999;">© 2025 Complaint Dashboard. All rights reserved.</p>
-  </footer>
+
+      <section id="about" class="tab">
+        <div class="card" style="font-family: 'Times New Roman', Times, serif;">
+          <h2>About</h2>
+          <p>
+            The <strong>Decentralized Complaint Log Register</strong> is designed to ensure transparency, security, and accountability in complaint management using a decentralized architecture.
+          </p>
+          <ul>
+            <li>All complaints are securely stored and tamper-proof.</li>
+            <li>Users can track the status of their complaints in real-time.</li>
+            <li>Admins and officers can efficiently manage and resolve complaints.</li>
+            <li>Data is visualized to show resolved vs pending complaints.</li>
+            <li>Empowers citizens with transparency in governance.</li>
+          </ul>
+          <canvas id="complaintChart" width="150" height="90" style="display:block;"></canvas>
+        </div>
+      </section>
+
+      <footer>
+        <p id="footer-text" style="text-align:center; color:#999;">© 2025 Complaint Dashboard. All rights reserved.</p>
+      </footer>
     </main>
   </div>
-
- 
 </body>
-
 </html>
